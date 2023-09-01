@@ -19,6 +19,11 @@
         <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
           <%= yield %>
         </div>
+        <% if authenticated? %>
+          <div class="text-center py-4 text-sm">
+            <%= link_to t(".sign_out"), session_path, data: {turbo_method: :delete}, class: "font-semibold leading-6 text-indigo-600 hover:text-indigo-500" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </body>

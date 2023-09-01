@@ -32,6 +32,9 @@
 en:
   sign_up: Sign up
   sign_in: Sign in
+  layouts:
+    application:
+      sign_out: Sign out
   users:
     new:
       member: Already a member?

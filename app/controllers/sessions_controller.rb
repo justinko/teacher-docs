@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate, except: :destroy
   before_action :require_no_authentication, except: :destroy
 
-  layout "lite"
-
   def new
   end
 
@@ -19,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    Current.user.sessions.find(params[:id]).destroy!
+    Current.session.destroy!
     redirect_to new_session_url
   end
 end

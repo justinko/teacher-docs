@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate
 
+  helper_method :authenticated?
+
   private
 
   def sign_in(user)

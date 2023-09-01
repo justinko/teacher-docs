@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate
 
-  layout "lite"
-
   def new
     @user = User.new
   end

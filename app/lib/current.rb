@@ -3,6 +3,6 @@ class Current < ActiveSupport::CurrentAttributes
 
   def session=(session)
     super
-    self.user = session.user
+    self.user = session&.user
   end
 end
