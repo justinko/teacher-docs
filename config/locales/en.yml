@@ -30,4 +30,19 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sign_up: Sign up
+  sign_in: Sign in
+  layouts:
+    application:
+      sign_out: Sign out
+  users:
+    new:
+      member: Already a member?
+  sessions:
+    new:
+      member: Not a member?
+    create:
+      invalid: Invalid email or password
+  activerecord:
+    models:
+      user: Account
