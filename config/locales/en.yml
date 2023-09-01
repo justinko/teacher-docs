@@ -41,6 +41,8 @@ en:
   sessions:
     new:
       member: Not a member?
+    create:
+      invalid: Invalid email or password
   activerecord:
     models:
       user: Account

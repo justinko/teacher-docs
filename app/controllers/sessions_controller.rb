@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to documents_url
     else
-      redirect_to new_session_url, alert: t(".fail")
+      redirect_to new_session_url, alert: t(".invalid")
     end
   end
 
