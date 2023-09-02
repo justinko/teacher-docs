@@ -1,1 +1,25 @@
 <%= content_for :title, Document.model_name.human.pluralize %>
+
+<%= form_with model: @document do |f| %>
+  <div class="space-y-6">
+    <div>
+      <%= f.label :file, class: "block text-sm font-medium leading-6 text-gray-900" %>
+      <div class="mt-2">
+        <%= f.file_field :file, required: true %>
+      </div>
+    </div>
+    <div>
+      <%= f.button nil, class: "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+    </div>
+  </div>
+<% end %>
+
+<% if @documents.any? %>
+  <ul role="list" class="divide-y divide-gray-100 mt-6">
+    <%= render @documents %>
+  </ul>
+<% else %>
+  <div class="w-full mt-6 text-sm font-semibold text-gray-900 rounded-lg border-2 border-dashed border-gray-300 p-12 text-center">
+    <%= t(".empty") %>
+  </div>
+<% end %>

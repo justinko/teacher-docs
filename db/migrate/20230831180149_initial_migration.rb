@@ -14,5 +14,10 @@ class InitialMigration < ActiveRecord::Migration[7.0]
       t.string :user_agent, :ip_address, null: false
       t.timestamps
     end
+
+    create_table :documents do |t|
+      t.belongs_to :user, null: false, index: true, foreign_key: true
+      t.timestamps
+    end
   end
 end

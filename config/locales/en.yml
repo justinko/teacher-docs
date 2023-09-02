@@ -43,6 +43,16 @@ en:
       member: Not a member?
     create:
       invalid: Invalid email or password
+  documents:
+    index:
+      empty: No documents uploaded yet
+  helpers:
+    label:
+      document:
+        file: Add document
+    submit:
+      document:
+        create: Upload
   activerecord:
     models:
       user: Account
