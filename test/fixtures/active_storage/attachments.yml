@@ -1,0 +1,4 @@
+markdown_file:
+  name: file
+  record: markdown (Document)
+  blob: markdown_file_blob

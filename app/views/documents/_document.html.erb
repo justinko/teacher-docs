@@ -1,8 +1,8 @@
 <li class="flex justify-between gap-x-6 py-5">
   <div class="flex min-w-0 gap-x-4">
     <div class="min-w-0 flex-auto">
-      <p class="text-sm font-semibold leading-6 text-gray-900"><%= document.file.filename %></p>
-      <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= number_to_human_size document.file.byte_size %></p>
+      <p class="text-sm"><%= link_to document.filename, document_path(document.signed_id), class: "font-semibold leading-6 text-indigo-600 hover:text-indigo-500" %></p>
+      <p class="mt-1 truncate text-xs leading-5 text-gray-500"><%= number_to_human_size document.byte_size %></p>
     </div>
   </div>
   <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">

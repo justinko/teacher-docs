@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class DocumentsTest < ApplicationSystemTestCase
   test "upload and delete" do
-    user = users(:john)
+    user = users(:bob)
 
     # TODO: create "backdoor" auth for testing
     visit new_session_path
@@ -22,5 +22,13 @@ class DocumentsTest < ApplicationSystemTestCase
       click_on "Delete"
       assert_text "No documents"
     end
+  end
+
+  test "viewing a document does not require authentication" do
+    doc = documents(:markdown)
+    visit document_path(doc.signed_id)
+    assert_text doc.file.filename
+    assert_text "Download"
+    # TODO: test download
   end
 end

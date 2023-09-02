@@ -1,7 +1,13 @@
 class DocumentsController < ApplicationController
+  skip_before_action :authenticate, only: :show
+
   def index
     @document = Current.user.documents.build
     @documents = Current.user.documents.with_attached_file.order(created_at: :desc)
+  end
+
+  def show
+    @document = Document.find_signed!(params[:id])
   end
 
   def create

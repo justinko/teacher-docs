@@ -1,0 +1,1 @@
+markdown_file_blob: <%= ActiveStorage::FixtureSet.blob filename: "example.md", service_name: "test_fixtures" %>
