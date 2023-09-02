@@ -1,0 +1,13 @@
+<%= content_for :title, @document.filename %>
+
+<p>
+<%= number_to_human_size @document.byte_size %>
+</p>
+
+<p>
+<%= time_ago_in_words @document.created_at %>
+</p>
+
+<p>
+<%= link_to "Download", rails_blob_path(@document.file, disposition: "attachment"), class: "font-semibold leading-6 text-indigo-600 hover:text-indigo-500" %>
+</p>
